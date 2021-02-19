@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enigma</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<script type="text/javascript" src="main.js"></script>
+	<main>
+		<div id="setup">
+			<div id="titles">
+				<h1>ENIGMA</h1>
+				<h3>Ingrese datos de rotores</h2>
+			</div>
+			<div id="rotors__setup">
+				<div class="rotors__box">
+					<p class="rotors__title">Reflector</p>
+					<input type="number" min="1" max="2" value="1" name="number" class="inputs" id="reflec">
+				</div>
+
+				<div class="rotors__box">
+					<p class="rotors__title">Rotor 1</p>
+					<input type="number" min="1" max="26" value="1" name="number" class="inputs" id="rot1">
+				</div>
+
+				<div class="rotors__box">
+					<p class="rotors__title">1- Inicio</p>
+					<input type="number" min="1" max="26" value="1" name="number" class="inputs" id="rot1Initial">
+				</div>
+
+				<div class="rotors__box">
+					<p class="rotors__title">Rotor 2</p>
+					<input type="number" min="1" max="26" value="1" name="number" class="inputs" id="rot2">
+				</div>
+
+				<div class="rotors__box">
+					<p class="rotors__title">2- Inicio</p>
+					<input type="number" min="1" max="26" value="1" name="number" class="inputs" id="rot2Initial">
+				</div>
+
+				<div class="rotors__box">
+					<p class="rotors__title">Rotor 3</p>
+					<input type="number" min="1" max="26" value="1" name="number" class="inputs" id="rot3">
+				</div>
+
+				<div class="rotors__box">
+					<p class="rotors__title">3- Inicio</p>
+					<input type="number" min="1" max="26" value="1" name="number" class="inputs" id="rot3Initial">
+				</div>
+
+				<div id="setup__button">
+					<button type="button" class="setup__button" onclick="setup()">Confirmar</button>
+				</div>
+			</div>
+			
+		</div>
+
+		<div id="top">
+			<div id="rotors">
+				<div class="rotors__wheel" id="rotor__wheel1">A</div>
+				<div class="rotors__wheel" id="rotor__wheel2">A</div>
+				<div class="rotors__wheel" id="rotor__wheel3">A</div>
+			</div>
+			<div id="lights">
+				<div class="lights__block">
+					<div class="lights__letter"><p>Q</p></div>
+					<div class="lights__letter"><p>w</p></div>
+					<div class="lights__letter"><p>E</p></div>
+					<div class="lights__letter"><p>R</p></div>
+					<div class="lights__letter"><p>T</p></div>
+					<div class="lights__letter"><p>Z</p></div>
+					<div class="lights__letter"><p>U</p></div>
+					<div class="lights__letter"><p>I</p></div>
+					<div class="lights__letter"><p>O</p></div>
+				</div>
+				<div class="lights__block">
+					<div class="lights__letter"><p>A</p></div>
+					<div class="lights__letter"><p>S</p></div>
+					<div class="lights__letter"><p>D</p></div>
+					<div class="lights__letter"><p>F</p></div>
+					<div class="lights__letter"><p>G</p></div>
+					<div class="lights__letter"><p>H</p></div>
+					<div class="lights__letter"><p>J</p></div>
+					<div class="lights__letter"><p>K</p></div>
+				</div>
+				<div class="lights__block">
+					<div class="lights__letter"><p>P</p></div>
+					<div class="lights__letter"><p>Y</p></div>
+					<div class="lights__letter"><p>X</p></div>
+					<div class="lights__letter"><p>C</p></div>
+					<div class="lights__letter"><p>V</p></div>
+					<div class="lights__letter"><p>B</p></div>
+					<div class="lights__letter"><p>N</p></div>
+					<div class="lights__letter"><p>M</p></div>
+					<div class="lights__letter"><p>L</p></div>
+				</div>
+			</div>
+		</div>
+		<div id="keyboard">
+			<div class="keyboard__block">
+				<button type="button" class="button" onclick="obj.inputLetter(16)" disabled>Q</button>
+				<button type="button" class="button" onclick="obj.inputLetter(22)" disabled>W</button>
+				<button type="button" class="button" onclick="obj.inputLetter(4)" disabled>E</button>
+				<button type="button" class="button" onclick="obj.inputLetter(17)" disabled>R</button>
+				<button type="button" class="button" onclick="obj.inputLetter(19)" disabled>T</button>
+				<button type="button" class="button" onclick="obj.inputLetter(25)" disabled>Z</button>
+				<button type="button" class="button" onclick="obj.inputLetter(20)" disabled>U</button>
+				<button type="button" class="button" onclick="obj.inputLetter(8)" disabled>I</button>
+				<button type="button" class="button" onclick="obj.inputLetter(14)" disabled>O</button>
+			</div>
+			<div class="keyboard__block">
+				<button type="button" class="button" onclick="obj.inputLetter(0)" disabled>A</button>
+				<button type="button" class="button" onclick="obj.inputLetter(18)" disabled>S</button>
+				<button type="button" class="button" onclick="obj.inputLetter(3)" disabled>D</button>
+				<button type="button" class="button" onclick="obj.inputLetter(5)" disabled>F</button>
+				<button type="button" class="button" onclick="obj.inputLetter(6)" disabled>G</button>
+				<button type="button" class="button" onclick="obj.inputLetter(7)" disabled>H</button>
+				<button type="button" class="button" onclick="obj.inputLetter(9)" disabled>J</button>
+				<button type="button" class="button" onclick="obj.inputLetter(10)" disabled>K</button>
+			</div>
+			<div class="keyboard__block">
+				<button type="button" class="button" onclick="obj.inputLetter(15)" disabled>P</button>
+				<button type="button" class="button" onclick="obj.inputLetter(24)" disabled>Y</button>
+				<button type="button" class="button" onclick="obj.inputLetter(23)" disabled>X</button>
+				<button type="button" class="button" onclick="obj.inputLetter(2)" disabled>C</button>
+				<button type="button" class="button" onclick="obj.inputLetter(21)" disabled>V</button>
+				<button type="button" class="button" onclick="obj.inputLetter(1)" disabled>B</button>
+				<button type="button" class="button" onclick="obj.inputLetter(13)" disabled>N</button>
+				<button type="button" class="button" onclick="obj.inputLetter(12)" disabled>M</button>
+				<button type="button" class="button" onclick="obj.inputLetter(11)" disabled>L</button>
+			</div>
+		</div>
+		<div id="result">
+			<div id="rawCode"><b>Letras ingresadas<b></div>
+			<div id="cleanCode"><b>Resultado<b></div>
+		</div>
+	</main>
+	
+	
+	
+	
+</body>
+</html>

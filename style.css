@@ -1,0 +1,120 @@
+main{
+	font-family: Verdana;
+	text-align: center;
+	overflow-y: auto;
+	overflow-x: hidden;
+	width: 100%;
+	font-size: 1.5em;
+}
+
+#setup{
+	width: 100%;
+	margin: 1em 1em 2em 1em;
+}
+
+#titles{
+	width: 100%;
+}
+
+.rotors__box{
+	display: inline-block;
+	text-align: center;
+	word-wrap: break-word;
+	width: 5em;
+}
+
+
+.inputs{
+	text-align: center;
+	margin: auto;
+	font-size: 1em;
+	width: 2em;
+}
+
+#setup__button{
+	width: 100%;
+}
+
+.setup__button{
+	font-size: 1.25em;
+	margin-top: 1.2em;
+	padding: 0.5em;
+	border-radius: 16px; 
+}
+
+#top{
+	width: 100%;
+}
+
+#rotors{
+	width: 100%;
+}
+
+.rotors__wheel{
+	border: 1px solid black;
+	display: inline-block;
+	padding: 0.5em;
+	margin: 0.5em;
+}
+
+#lights{
+	width: 100%;
+	margin-top: 1em;
+}
+
+.lights__blocks{
+	width: 100%;
+}
+
+.lights__letter{
+	border: 1px solid black;
+	display: inline-block;
+	margin: 0.5em;
+	font-size: 0.75em;
+	border-radius: 50%;
+	width: 2em;
+	height: 2em;
+}
+
+.lights__letter p{
+	position: relative;
+	margin-top: 15%;
+	margin-right: 5%;
+}
+
+#keyboard{
+	width: 100%;
+	margin-top: 1em;
+}
+
+.keyboard__block{
+	width: 100%;
+}
+
+.button{
+	display: inline-block;
+	width: 2em;
+	height: 2em;
+	font-size: 0.75em;
+	margin: 0.5em;
+	border-radius: 50%;
+}
+
+#result{
+	width: 100%;
+	margin-top: 2em;
+}
+
+#rawCode{
+	display: inline-block;
+	width: 45%;
+	border: 1px solid black;
+	height: 20em;
+}
+
+#cleanCode{
+	display: inline-block;
+	width: 45%;
+	border: 1px solid black;
+	height: 20em;
+}
