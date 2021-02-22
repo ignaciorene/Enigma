@@ -113,10 +113,22 @@ main{
 	word-wrap: break-word;
 }
 
+#rawCodeResult{
+	font-size: 0.85em;
+	font-weight: normal;
+	font-family: 'Permanent Marker', cursive;
+}
+
 #cleanCode{
 	display: inline-block;
 	width: 45%;
 	border: 1px solid black;
 	height: 20em;
 	word-wrap: break-word;
+}
+
+#cleanCodeResult{
+	font-size: 0.85em;
+	font-weight: normal;
+	font-family: 'Permanent Marker', cursive;
 }

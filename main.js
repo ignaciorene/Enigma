@@ -122,7 +122,6 @@ class enigma{
 		this.rotor1=moveRotor(this.rotor1);
 
 		//muevo la imagen del rotor
-		console.log(this.rotor1);
 		posRotor1++;
 		if (posRotor1%26==0) {
 			posRotor1=0;
@@ -136,8 +135,6 @@ class enigma{
 		if (rotor1Count%26==0) {
 			rotor2Count++;
 			this.rotor2=moveRotor(this.rotor2);
-			console.log(this.rotor2);
-			alert("rotor 1 vuelta");
 
 			posRotor2++;
 			if (posRotor2%26==0) {
@@ -153,16 +150,14 @@ class enigma{
 		if (rotor2Count%26==0 && rotor1Count%26==0){
 			rotor3Count++;
 			this.rotor3=moveRotor(this.rotor3);
-			console.log(this.rotor3);
-			alert("rotor 2 vuelta");
 
 			posRotor3++;
 			if (posRotor3%26==0) {
 				posRotor3=0;
-				document.getElementById("rotor__wheel1").innerHTML=abc[posRotor1];
+				document.getElementById("rotor__wheel1").innerHTML=abc[posRotor3];
 			}
 			else{
-				document.getElementById("rotor__wheel1").innerHTML=abc[posRotor1];
+				document.getElementById("rotor__wheel1").innerHTML=abc[posRotor3];
 			}
 		}
 
@@ -173,7 +168,6 @@ class enigma{
 				res3=i;
 			}
 		}
-		console.log("2º res rotor3: "+res3);
 
 		let res2=0;
 		for(let i=0;i<this.rotor2.length;i++){
@@ -181,7 +175,6 @@ class enigma{
 				res2=i;
 			}
 		}
-		console.log("2º res rotor2: "+res2);
 
 		let res1=0;
 		for(let i=0;i<this.rotor1.length;i++){
@@ -189,7 +182,6 @@ class enigma{
 				res1=i;
 			}
 		}
-		console.log("res final: "+res1);
 
 		rawCodeText=document.getElementById("rawCodeResult").innerHTML;
 		cleanCodeText=document.getElementById("cleanCodeResult").innerHTML;
@@ -213,11 +205,6 @@ function setup(){
 	}
 
 	obj=new enigma(reflec,rot3,rot3Initial-1,rot2,rot2Initial-1,rot1,rot1Initial-1);
-	console.log(obj);
-	console.log(obj.rotor1);
-	console.log(obj.rotor2);
-	console.log(obj.rotor3);
-	console.log(obj.reflector);
 
 	document.getElementById("rotor__wheel1").innerHTML=abc[rot1Initial-1];
 	document.getElementById("rotor__wheel2").innerHTML=abc[rot2Initial-1];
