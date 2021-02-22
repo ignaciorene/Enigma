@@ -310,7 +310,7 @@ function wiring(letter){
 			else if(wiringCont==4){
 				replaceSelection[1]=letter;
 				console.log(replaceSelection);
-				replace[1]=replaceSelection;
+				replace.push(replaceSelection);
 				console.log(replace);
 			}
 		}
