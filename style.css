@@ -110,6 +110,7 @@ main{
 	width: 45%;
 	border: 1px solid black;
 	height: 20em;
+	word-wrap: break-word;
 }
 
 #cleanCode{
@@ -117,4 +118,5 @@ main{
 	width: 45%;
 	border: 1px solid black;
 	height: 20em;
+	word-wrap: break-word;
 }

@@ -16,6 +16,13 @@ var rotor1Count=0;
 var rotor2Count=0;
 var rotor3Count=0;
 
+var obj;
+var rawCodeText=" ";
+var cleanCodeText=" ";
+var posRotor1=0;
+var posRotor2=0;
+var posRotor3=0;
+
 //message=document.getElementById("message").value;
 //document.getElementById("result").innerHTML='<b style="text-weight:bold;font-size:1.5em;display:block;margin-bottom:0.25em;margin-top:0.25em;">SU MENSAJE ES:</b><br><p id="resultMessage">'+encryptedMessage+'</p>';
 
@@ -109,21 +116,54 @@ class enigma{
 	}
 
 	inputLetter(letter){
-
 		//Giro los rotores
 		rotor1Count++;
 
 		this.rotor1=moveRotor(this.rotor1);
 
+		//muevo la imagen del rotor
+		console.log(this.rotor1);
+		posRotor1++;
+		if (posRotor1%26==0) {
+			posRotor1=0;
+			document.getElementById("rotor__wheel3").innerHTML=abc[posRotor1];
+		}
+		else{
+			document.getElementById("rotor__wheel3").innerHTML=abc[posRotor1];
+		}
+
+		//si da una vuelta entonces giro el segundo rotor
 		if (rotor1Count%26==0) {
 			rotor2Count++;
 			this.rotor2=moveRotor(this.rotor2);
 			console.log(this.rotor2);
+			alert("rotor 1 vuelta");
+
+			posRotor2++;
+			if (posRotor2%26==0) {
+				posRotor2=0;
+				document.getElementById("rotor__wheel2").innerHTML=abc[posRotor2];
+			}
+			else{
+				document.getElementById("rotor__wheel2").innerHTML=abc[posRotor2];
+			}
 		}
-		if (rotor2Count%26==0 && rotor2Count!=0){
+
+		//si el segundo rotor da una vuelta giro el tercer rotor
+		if (rotor2Count%26==0 && rotor1Count%26==0){
 			rotor3Count++;
 			this.rotor3=moveRotor(this.rotor3);
 			console.log(this.rotor3);
+			alert("rotor 2 vuelta");
+
+			posRotor3++;
+			if (posRotor3%26==0) {
+				posRotor3=0;
+				document.getElementById("rotor__wheel1").innerHTML=abc[posRotor1];
+			}
+			else{
+				document.getElementById("rotor__wheel1").innerHTML=abc[posRotor1];
+			}
 		}
 
 		//obtengo letra código		
@@ -150,6 +190,11 @@ class enigma{
 			}
 		}
 		console.log("res final: "+res1);
+
+		rawCodeText=document.getElementById("rawCodeResult").innerHTML;
+		cleanCodeText=document.getElementById("cleanCodeResult").innerHTML;
+		document.getElementById("rawCodeResult").innerHTML=rawCodeText+abc[letter];
+		document.getElementById("cleanCodeResult").innerHTML=cleanCodeText+abc[res1];	
 	}
 }
 
@@ -167,7 +212,7 @@ function setup(){
 	    inputs[i].disabled = false;
 	}
 
-	var obj=new enigma(reflec,rot3,rot3Initial-1,rot2,rot2Initial-1,rot1,rot1Initial-1);
+	obj=new enigma(reflec,rot3,rot3Initial-1,rot2,rot2Initial-1,rot1,rot1Initial-1);
 	console.log(obj);
 	console.log(obj.rotor1);
 	console.log(obj.rotor2);
@@ -177,4 +222,20 @@ function setup(){
 	document.getElementById("rotor__wheel1").innerHTML=abc[rot1Initial-1];
 	document.getElementById("rotor__wheel2").innerHTML=abc[rot2Initial-1];
 	document.getElementById("rotor__wheel3").innerHTML=abc[rot3Initial-1];
+
+	posRotor1=rot1Initial-1;
+	posRotor2=rot2Initial-1;
+	posRotor3=rot3Initial-1;
+
+	rawCodeText=" ";
+	cleanCodeText=" ";
+	document.getElementById("rawCodeResult").innerHTML=rawCodeText;
+	document.getElementById("cleanCodeResult").innerHTML=cleanCodeText;
+}
+
+function clearText(){
+	rawCodeText=" ";
+	cleanCodeText=" ";
+	document.getElementById("rawCodeResult").innerHTML=rawCodeText;
+	document.getElementById("cleanCodeResult").innerHTML=cleanCodeText;
 }
