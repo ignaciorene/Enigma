@@ -23,6 +23,10 @@ var posRotor1=0;
 var posRotor2=0;
 var posRotor3=0;
 
+var wiringCont=0;
+var replace=[];
+var replaceSelection=[];
+var usedWiring=[];
 //message=document.getElementById("message").value;
 //document.getElementById("result").innerHTML='<b style="text-weight:bold;font-size:1.5em;display:block;margin-bottom:0.25em;margin-top:0.25em;">SU MENSAJE ES:</b><br><p id="resultMessage">'+encryptedMessage+'</p>';
 
@@ -161,6 +165,23 @@ class enigma{
 			}
 		}
 
+		//muestro lo ingresado
+		rawCodeText=document.getElementById("rawCodeResult").innerHTML;
+		document.getElementById("rawCodeResult").innerHTML=rawCodeText+abc[letter];
+
+		console.log(abc[letter]);
+		//reemplazo letra por wiring en caso que lo haya
+		for(let i=0;i<replace.length;i++){
+			if (replace[i][0]==letter) {
+				letter=replace[i][1];
+			}
+			else if(replace[i][1]==letter){
+				letter=replace[i][0];
+			}
+		}
+
+		console.log(abc[letter]);
+
 		//obtengo letra código		
 		let res3=0;
 		for(let i=0;i<this.rotor3.length;i++){
@@ -183,9 +204,8 @@ class enigma{
 			}
 		}
 
-		rawCodeText=document.getElementById("rawCodeResult").innerHTML;
+		//muestro resultados
 		cleanCodeText=document.getElementById("cleanCodeResult").innerHTML;
-		document.getElementById("rawCodeResult").innerHTML=rawCodeText+abc[letter];
 		document.getElementById("cleanCodeResult").innerHTML=cleanCodeText+abc[res1];	
 	}
 }
@@ -199,13 +219,21 @@ function setup(){
 	var rot3=parseInt(document.getElementById("rot3").value);
 	var rot3Initial=parseInt(document.getElementById("rot3Initial").value);
 
+	//habilito botones
 	var inputs = document.getElementsByClassName('button');
 	for(var i = 0; i < inputs.length; i++) {
 	    inputs[i].disabled = false;
 	}
 
+	inputs = document.getElementsByClassName('wiringButton');
+	for(var i = 0; i < inputs.length; i++) {
+	    inputs[i].disabled = false;
+	}
+
+	//creo nuevo objeto con las especificaciones del usuario
 	obj=new enigma(reflec,rot3,rot3Initial-1,rot2,rot2Initial-1,rot1,rot1Initial-1);
 
+	//ajusto la imagen de los rotores
 	document.getElementById("rotor__wheel1").innerHTML=abc[rot1Initial-1];
 	document.getElementById("rotor__wheel2").innerHTML=abc[rot2Initial-1];
 	document.getElementById("rotor__wheel3").innerHTML=abc[rot3Initial-1];
@@ -214,10 +242,13 @@ function setup(){
 	posRotor2=rot2Initial-1;
 	posRotor3=rot3Initial-1;
 
+	//limpio datos y selecciones
 	rawCodeText=" ";
 	cleanCodeText=" ";
 	document.getElementById("rawCodeResult").innerHTML=rawCodeText;
 	document.getElementById("cleanCodeResult").innerHTML=cleanCodeText;
+
+	wiringCont=0;
 }
 
 function clearText(){
@@ -225,4 +256,64 @@ function clearText(){
 	cleanCodeText=" ";
 	document.getElementById("rawCodeResult").innerHTML=rawCodeText;
 	document.getElementById("cleanCodeResult").innerHTML=cleanCodeText;
+}
+
+function wiring(letter){
+	let idSelected="";
+	let btn;
+	let duplicated=false;
+
+	//reviso si esa letra ya esta seleccionada y en caso de estarlo elimino su selección
+	for(let i=0;i<usedWiring.length;i++){
+		if (usedWiring[i]==letter) {
+			duplicated=true;
+			idSelected="wiringButton"+abc[letter];
+			btn=document.getElementById(idSelected);
+			btn.style.backgroundColor="white";
+			wiringCont--;
+			usedWiring.splice(i,1);
+		}
+	}
+
+	//si no estaba seleccionada la letra procedo a registrarla para reemplazar
+	if (duplicated==false) {
+		wiringCont++;
+		usedWiring.push(letter);
+		if (wiringCont<=2){
+			idSelected="wiringButton"+abc[letter];
+			btn=document.getElementById(idSelected);
+			btn.style.backgroundColor="red";
+
+			if (wiringCont==1) {
+				replaceSelection[0]=letter;
+				replaceSelection[1]=letter;
+				console.log(replaceSelection);
+			}
+			else if(wiringCont==2){
+				replaceSelection[1]=letter;
+				console.log(replaceSelection);
+				replace.push(replaceSelection);
+				console.log(replace);
+			}
+
+		}
+		else if(wiringCont>2 && wiringCont<=4){
+			idSelected="wiringButton"+abc[letter];
+			btn=document.getElementById(idSelected);
+			btn.style.backgroundColor="blue";
+
+			if (wiringCont==3) {
+				replaceSelection[0]=letter;
+				replaceSelection[1]=letter;
+				console.log(replaceSelection);
+			}
+			else if(wiringCont==4){
+				replaceSelection[1]=letter;
+				console.log(replaceSelection);
+				replace[1]=replaceSelection;
+				console.log(replace);
+			}
+		}
+	}
+
 }

@@ -100,6 +100,31 @@ main{
 	border-radius: 50%;
 }
 
+#wiring{
+	width: 100%;
+}
+
+.wiring__block{
+	margin-top: 1em;
+}
+
+.wiring__block__letter{
+	display: inline-block;
+}
+
+.wiring__block__letter p{
+	font-size: 0.80em;
+	margin: 0.2em;
+}
+
+.wiringButton{
+	display: inline-block;
+	width: 2em;
+	height: 2em;
+	font-size: 0.75em;
+	border-radius: 50%;
+}
+
 #result{
 	width: 100%;
 	margin-top: 2em;
