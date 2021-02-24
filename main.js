@@ -229,7 +229,7 @@ function setup(){
 
 	//verifico que no repita el rotor y caso contrario avanzo
 	if (rot1==rot2 || rot2==rot3 || rot3==rot1) {
-		document.getElementById("errorMessage").innerHTML="No puede seleccionar el rotor más de una vez";
+		document.getElementById("errorMessage").innerHTML="<b>No puede seleccionar el rotor más de una vez</b>";
 	}
 	else{
 		document.getElementById("errorMessage").innerHTML="";
