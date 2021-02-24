@@ -169,6 +169,13 @@ h1{
 	background-color: #363434;
 }
 
+.button:active{
+	width: 1.8em;
+	height: 1.8em;
+	font-size: 0.675em;
+	margin: 0.2em 0.75em 0.5em 0.75em;
+}
+
 .button:focus{
 	outline: none;
 }
