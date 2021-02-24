@@ -1,7 +1,5 @@
 const abc=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 const n=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
-const hasSymbol = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-const hasNumber = /\d/;
 var rotorI=[11,0,12,1,19,7,2,17,13,3,6,22,18,14,4,23,25,5,9,16,24,8,21,15,10,20];
 var rotorII=[8,13,5,4,14,23,12,17,9,0,18,11,1,3,2,24,16,6,15,22,10,20,25,21,7,19];
 var rotorIII=[10,0,8,1,5,15,14,17,12,25,7,6,11,21,2,16,13,20,3,18,24,9,23,19,22,4];
@@ -15,20 +13,16 @@ const reflectorB=[10,23,15,20,13,25,12,9,11,7,0,8,6,4,21,2,19,24,22,16,3,14,18,1
 var rotor1Count=0;
 var rotor2Count=0;
 var rotor3Count=0;
-
 var obj;
 var rawCodeText=" ";
 var cleanCodeText=" ";
 var posRotor1=0;
 var posRotor2=0;
 var posRotor3=0;
-
-var wiringCont=0;
-var replace=[];
-var replaceSelection=[];
-var usedWiring=[];
-//message=document.getElementById("message").value;
-//document.getElementById("result").innerHTML='<b style="text-weight:bold;font-size:1.5em;display:block;margin-bottom:0.25em;margin-top:0.25em;">SU MENSAJE ES:</b><br><p id="resultMessage">'+encryptedMessage+'</p>';
+var wires={};
+var colors=["red","blue","yellow","green","violet","black","orange","grey","brown","cyan"];
+var aux;
+var wiringCont=-1;
 
 function createRotor(id,initialPosition,rotor) {
 		//selecciono el rotor elegido por el usuario
@@ -169,19 +163,14 @@ class enigma{
 		rawCodeText=document.getElementById("rawCodeResult").innerHTML;
 		document.getElementById("rawCodeResult").innerHTML=rawCodeText+abc[letter];
 
-		console.log(abc[letter]);
+		console.log(letter);
 		//reemplazo letra por wiring en caso que lo haya
-		for(let i=0;i<replace.length;i++){
-			if (replace[i][0]==letter) {
-				letter=replace[i][1];
-			}
-			else if(replace[i][1]==letter){
-				letter=replace[i][0];
+		if (wires[letter]) {
+			if (wires[letter].lett!=null) {
+				letter=wires[letter].lett;
 			}
 		}
-
-		console.log(abc[letter]);
-
+		console.log(letter);
 		//obtengo letra código		
 		let res3=0;
 		for(let i=0;i<this.rotor3.length;i++){
@@ -204,6 +193,16 @@ class enigma{
 			}
 		}
 
+		if (wires[res1]) {
+			if (wires[res1].lett!=null) {
+				res1=wires[res1].lett;
+			}
+		}
+		console.log(res1);
+		console.log(this.rotor1);
+		console.log(this.rotor2);
+		console.log(this.rotor3);
+		console.log(this.reflector);
 		//muestro resultados
 		cleanCodeText=document.getElementById("cleanCodeResult").innerHTML;
 		document.getElementById("cleanCodeResult").innerHTML=cleanCodeText+abc[res1];	
@@ -211,6 +210,7 @@ class enigma{
 }
 
 function setup(){
+	
 	var reflec=parseInt(document.getElementById("reflec").value);
 	var rot1=parseInt(document.getElementById("rot1").value);
 	var rot1Initial=parseInt(document.getElementById("rot1Initial").value);
@@ -219,36 +219,56 @@ function setup(){
 	var rot3=parseInt(document.getElementById("rot3").value);
 	var rot3Initial=parseInt(document.getElementById("rot3Initial").value);
 
-	//habilito botones
-	var inputs = document.getElementsByClassName('button');
-	for(var i = 0; i < inputs.length; i++) {
-	    inputs[i].disabled = false;
+	//verifico que no repita el rotor y caso contrario avanzo
+	if (rot1==rot2 || rot2==rot3 || rot3==rot1) {
+		document.getElementById("errorMessage").innerHTML="No puede seleccionar el rotor más de una vez";
 	}
+	else{
+		document.getElementById("errorMessage").innerHTML="";
+		document.getElementById("main__setup__button").innerHTML="Reiniciar";
+		//habilito botones
+		var inputs = document.getElementsByClassName('button');
+		for(var i = 0; i < inputs.length; i++) {
+			inputs[i].disabled = false;
+		}
 
-	inputs = document.getElementsByClassName('wiringButton');
-	for(var i = 0; i < inputs.length; i++) {
-	    inputs[i].disabled = false;
-	}
+		inputs = document.getElementsByClassName('wiringButton');
+		for(var i = 0; i < inputs.length; i++) {
+			inputs[i].disabled = false;
+		}
 
-	//creo nuevo objeto con las especificaciones del usuario
-	obj=new enigma(reflec,rot3,rot3Initial-1,rot2,rot2Initial-1,rot1,rot1Initial-1);
+		//creo nuevo objeto con las especificaciones del usuario
+		obj=new enigma(reflec,rot3,rot3Initial-1,rot2,rot2Initial-1,rot1,rot1Initial-1);
 
-	//ajusto la imagen de los rotores
-	document.getElementById("rotor__wheel1").innerHTML=abc[rot1Initial-1];
-	document.getElementById("rotor__wheel2").innerHTML=abc[rot2Initial-1];
-	document.getElementById("rotor__wheel3").innerHTML=abc[rot3Initial-1];
+		//ajusto la imagen de los rotores
+		document.getElementById("rotor__wheel1").innerHTML=abc[rot1Initial-1];
+		document.getElementById("rotor__wheel2").innerHTML=abc[rot2Initial-1];
+		document.getElementById("rotor__wheel3").innerHTML=abc[rot3Initial-1];
 
-	posRotor1=rot1Initial-1;
-	posRotor2=rot2Initial-1;
-	posRotor3=rot3Initial-1;
+		posRotor1=rot1Initial-1;
+		posRotor2=rot2Initial-1;
+		posRotor3=rot3Initial-1;
 
-	//limpio datos y selecciones
-	rawCodeText=" ";
-	cleanCodeText=" ";
-	document.getElementById("rawCodeResult").innerHTML=rawCodeText;
-	document.getElementById("cleanCodeResult").innerHTML=cleanCodeText;
+		//limpio datos y selecciones
+		rawCodeText=" ";
+		cleanCodeText=" ";
+		document.getElementById("rawCodeResult").innerHTML=rawCodeText;
+		document.getElementById("cleanCodeResult").innerHTML=cleanCodeText;
 
-	wiringCont=0;
+		wiringCont=0;
+		for (i in wires){
+			wires[i]=null;
+		}
+
+		colors=["red","blue","yellow","green","violet","black","orange","grey","brown","cyan"];
+		aux=null;
+
+		for (let i=0;i<abc.length;i++){
+			idSelected="wiringButton"+abc[i];
+			btn=document.getElementById(idSelected);
+			btn.style.backgroundColor="white";
+		}
+	}	
 }
 
 function clearText(){
@@ -260,99 +280,54 @@ function clearText(){
 
 function wiring(letter){
 	let idSelected="";
-	let btn;
-	let duplicated=false;
+	let btn="";
+	/*idSelected="wiringButton"+abc[letter];
+	btn=document.getElementById(idSelected);
+	btn.style.backgroundColor="white";*/
 
-	//reviso si esa letra ya esta seleccionada y en caso de estarlo elimino su selección
-	for(let i=0;i<usedWiring.length;i++){
-		if (usedWiring[i]==letter) {
-			duplicated=true;
+	if (wiringCont<=10){
+		if (wires[letter]) {
+
 			idSelected="wiringButton"+abc[letter];
 			btn=document.getElementById(idSelected);
 			btn.style.backgroundColor="white";
-			wiringCont--;
-			usedWiring.splice(i,1);
-		}
-	}
 
-	//si no estaba seleccionada la letra procedo a registrarla para reemplazar
-	if (duplicated==false) {
-		wiringCont++;
-		usedWiring.push(letter);
-		if (wiringCont<=2){
-			idSelected="wiringButton"+abc[letter];
+			idSelected="wiringButton"+abc[wires[letter].lett];
 			btn=document.getElementById(idSelected);
-			btn.style.backgroundColor="red";
+			btn.style.backgroundColor="white";
 
-			if (wiringCont==1) {
-				replaceSelection[0]=letter;
-				replaceSelection[1]=letter;
-				console.log(replaceSelection);
-			}
-			else if(wiringCont==2){
-				replaceSelection[1]=letter;
-				console.log(replaceSelection);
-				replace.push(replaceSelection);
-				console.log(replace);
-			}
-
-		}
-		else if(wiringCont>2 && wiringCont<=4){
-			idSelected="wiringButton"+abc[letter];
-			btn=document.getElementById(idSelected);
-			btn.style.backgroundColor="blue";
-
-			if (wiringCont==3) {
-				replaceSelection[0]=letter;
-				replaceSelection[1]=letter;
-				console.log(replaceSelection);
-			}
-			else if(wiringCont==4){
-				replaceSelection[1]=letter;
-				console.log(replaceSelection);
-				replace.push(replaceSelection);
-				console.log(replace);
-			}
-		}
-	}
-}
-
-//notas
-cables={
-	q:w,
-	w:q,
-}
-
-letter;
-var aux; //global
-colores=[{color:"red",usado:false},{color:"blue",usado:false},{color:"green",usado:false},{color:"yellow",usado:false}];
-
-cables["q"]={letter:w,color:red};
-cables["w"]={letter:q,color:red};
-
-if (cables[letter]) {
-	cables[cables[letter]]=null;
-	cables[letter]=null;
-	colores.map(color=>{
-		if (color.color==cables[letter].color){
-			return {
-				usado:false,
-				color:color.color;
-			}
-		}
+			colors.unshift(wires[letter].color);
+			wires[wires[letter].lett]=null;
+			wires[letter]=null;	
+			
+			wiringCont=wiringCont-1;
+			
+		} 
 		else{
-			return color;
+			if (aux && aux.lett!=letter) {
+				wires[letter]=aux;
+				wires[aux.lett]={lett:letter,color:aux.color};
+				aux=null;
+		
+				idSelected="wiringButton"+abc[letter];
+				btn=document.getElementById(idSelected);
+				btn.style.backgroundColor=colors.shift(wires[letter].color);
+			}
+			else if(aux==null && wiringCont<10){
+				aux={lett:letter,color:colors[0]};
+				if (wiringCont==0) {
+					idSelected="wiringButton"+abc[letter];
+					btn=document.getElementById(idSelected);
+					btn.style.backgroundColor=aux.color;
+				}
+				else{
+					idSelected="wiringButton"+abc[letter];
+					btn=document.getElementById(idSelected);
+					btn.style.backgroundColor=aux.color;
+				}
+				
+				wiringCont++;
+			}
 		}
-	});
-}
-else{
-	if (aux) {
-		cables[letter]=aux;
-		cables[aux.letter]={letter:letter,color:aux.color};
-		aux=null;
-	}
-	else{
-		aux={letter:letter,color:};
-		//dom de pintar con color elegido
 	}
 }
