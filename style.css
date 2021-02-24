@@ -1,19 +1,35 @@
+body{
+	margin: 0;
+}
+
 main{
-	font-family: Verdana;
+	font-family: 'Inconsolata', monospace;
 	text-align: center;
 	overflow-y: auto;
 	overflow-x: hidden;
 	width: 100%;
 	font-size: 1.5em;
+	background-color: #636161;
+	background-image: url("img/background1.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: 0.85;
 }
 
 #setup{
 	width: 100%;
 	margin: 1em 1em 2em 1em;
+	color: #F9FAFA;
 }
 
 #titles{
 	width: 100%;
+}
+
+h1{
+	font-size: 5em;
+	margin: 0;
 }
 
 .rotors__box{
@@ -40,6 +56,22 @@ main{
 	margin-top: 1.2em;
 	padding: 0.5em;
 	border-radius: 16px; 
+	font-family: 'Inconsolata', monospace;
+	background-color: #eee6e6;
+}
+
+.setup__button:focus{
+	border: 2px solid #050505;
+	outline: none;
+}
+
+.setup__button:active{
+	border: 2px solid #050505;
+	outline: none;
+}
+
+.setup__button:hover{
+	cursor: pointer;
 }
 
 #errorMessage{
@@ -47,8 +79,23 @@ main{
 	font-size: 0.75em;
 }
 
+#enigmaMachine{
+	width: 70%;
+	margin: auto;
+	padding: 1em;
+	background-image: url("img/wooden.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 #top{
 	width: 100%;
+	margin: auto;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	background-color: #050505;
+	color: #F9FAFA;
 }
 
 #rotors{
@@ -56,15 +103,25 @@ main{
 }
 
 .rotors__wheel{
-	border: 1px solid black;
+	background-color: #F9FAFA;
 	display: inline-block;
 	padding: 0.5em;
 	margin: 0.5em;
+	margin-bottom: 2em;
+	color: #050505;
+	border: 1px solid #050505;
+	width: 1em;
+	height: 3em;
 }
 
 #lights{
 	width: 100%;
-	margin-top: 1em;
+	margin: auto;
+	background-color: #050505;
+	color: #F9FAFA;
+	border-top: 5px solid rgba(86, 86, 86, 0.5);
+	border-bottom: 5px solid rgba(86, 86, 86, 0.5);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .lights__blocks{
@@ -72,13 +129,14 @@ main{
 }
 
 .lights__letter{
-	border: 1px solid black;
+	border: none;
 	display: inline-block;
 	margin: 0.5em;
 	font-size: 0.75em;
 	border-radius: 50%;
 	width: 2em;
 	height: 2em;
+	border:1px solid #9D9A9A;
 }
 
 .lights__letter p{
@@ -89,7 +147,10 @@ main{
 
 #keyboard{
 	width: 100%;
-	margin-top: 1em;
+	margin: auto;
+	background-color: #050505;
+	color: #F9FAFA;
+	padding-bottom: 1em;
 }
 
 .keyboard__block{
@@ -103,18 +164,28 @@ main{
 	font-size: 0.75em;
 	margin: 0.5em;
 	border-radius: 50%;
+	border:2px solid #9D9A9A;
+	color: #F9FAFA;
+	background-color: #363434;
+}
+
+.button:focus{
+	outline: none;
 }
 
 #wiring{
 	width: 100%;
-}
-
-.wiring__block{
-	margin-top: 1em;
+	margin: auto;
+	background-color: #050505;
+	color: #F9FAFA;
+	padding-bottom: 1em;
+	border-top: 5px solid rgba(86, 86, 86, 0.5);
 }
 
 .wiring__block__letter{
 	display: inline-block;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
 }
 
 .wiring__block__letter p{
@@ -124,41 +195,75 @@ main{
 
 .wiringButton{
 	display: inline-block;
-	width: 2em;
-	height: 2em;
+	width: 1.5em;
+	height: 1.5em;
 	font-size: 0.75em;
 	border-radius: 50%;
+	background-color: #363434;
+	border:2px solid #9D9A9A;
+}
+
+.wiringButton:focus{
+	outline: none;
 }
 
 #result{
-	width: 100%;
+	width: 72.5%;
+	margin: auto;
 	margin-top: 2em;
+	margin-bottom: 1em;
+	background-image: url("img/wooden.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
 #rawCode{
 	display: inline-block;
-	width: 45%;
+	width: 35%;
 	border: 1px solid black;
 	height: 20em;
 	word-wrap: break-word;
+	background-color: #F1DEB0;
+	background-image: url("img/oldbookleft.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow-y: auto;
 }
 
 #rawCodeResult{
 	font-size: 0.85em;
 	font-weight: normal;
 	font-family: 'Permanent Marker', cursive;
+	width: 80%;
+	margin: auto;
 }
 
 #cleanCode{
 	display: inline-block;
-	width: 45%;
+	width: 35%;
 	border: 1px solid black;
 	height: 20em;
 	word-wrap: break-word;
+	background-color: #F1DEB0;
+	background-image: url("img/oldbookrigth.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow-y: auto;
 }
 
 #cleanCodeResult{
 	font-size: 0.85em;
 	font-weight: normal;
 	font-family: 'Permanent Marker', cursive;
+	width: 80%;
+	margin: auto;
+}
+
+#clean__button{
+	width: 100%;
 }

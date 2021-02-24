@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
 </head>
 <body>
 	<script type="text/javascript" src="main.js"></script>
@@ -58,214 +59,215 @@
 			</div>
 			
 		</div>
-
-		<div id="top">
-			<div id="rotors">
-				<div class="rotors__wheel" id="rotor__wheel1">A</div>
-				<div class="rotors__wheel" id="rotor__wheel2">A</div>
-				<div class="rotors__wheel" id="rotor__wheel3">A</div>
-			</div>
-			<div id="lights">
-				<div class="lights__block">
-					<div class="lights__letter"><p>Q</p></div>
-					<div class="lights__letter"><p>w</p></div>
-					<div class="lights__letter"><p>E</p></div>
-					<div class="lights__letter"><p>R</p></div>
-					<div class="lights__letter"><p>T</p></div>
-					<div class="lights__letter"><p>Z</p></div>
-					<div class="lights__letter"><p>U</p></div>
-					<div class="lights__letter"><p>I</p></div>
-					<div class="lights__letter"><p>O</p></div>
+		<div id="enigmaMachine">
+			<div id="top">
+				<div id="rotors">
+					<div class="rotors__wheel"><p id="rotor__wheel1">A</p></div>
+					<div class="rotors__wheel"><p id="rotor__wheel2">A</p></div>
+					<div class="rotors__wheel"><p id="rotor__wheel3">A</p></div>
 				</div>
-				<div class="lights__block">
-					<div class="lights__letter"><p>A</p></div>
-					<div class="lights__letter"><p>S</p></div>
-					<div class="lights__letter"><p>D</p></div>
-					<div class="lights__letter"><p>F</p></div>
-					<div class="lights__letter"><p>G</p></div>
-					<div class="lights__letter"><p>H</p></div>
-					<div class="lights__letter"><p>J</p></div>
-					<div class="lights__letter"><p>K</p></div>
-				</div>
-				<div class="lights__block">
-					<div class="lights__letter"><p>P</p></div>
-					<div class="lights__letter"><p>Y</p></div>
-					<div class="lights__letter"><p>X</p></div>
-					<div class="lights__letter"><p>C</p></div>
-					<div class="lights__letter"><p>V</p></div>
-					<div class="lights__letter"><p>B</p></div>
-					<div class="lights__letter"><p>N</p></div>
-					<div class="lights__letter"><p>M</p></div>
-					<div class="lights__letter"><p>L</p></div>
-				</div>
-			</div>
-		</div>
-		<div id="keyboard">
-			<div class="keyboard__block">
-				<button type="button" class="button" onclick="obj.inputLetter(16)" disabled>Q</button>
-				<button type="button" class="button" onclick="obj.inputLetter(22)" disabled>W</button>
-				<button type="button" class="button" onclick="obj.inputLetter(4)" disabled>E</button>
-				<button type="button" class="button" onclick="obj.inputLetter(17)" disabled>R</button>
-				<button type="button" class="button" onclick="obj.inputLetter(19)" disabled>T</button>
-				<button type="button" class="button" onclick="obj.inputLetter(25)" disabled>Z</button>
-				<button type="button" class="button" onclick="obj.inputLetter(20)" disabled>U</button>
-				<button type="button" class="button" onclick="obj.inputLetter(8)" disabled>I</button>
-				<button type="button" class="button" onclick="obj.inputLetter(14)" disabled>O</button>
-			</div>
-			<div class="keyboard__block">
-				<button type="button" class="button" onclick="obj.inputLetter(0)" disabled>A</button>
-				<button type="button" class="button" onclick="obj.inputLetter(18)" disabled>S</button>
-				<button type="button" class="button" onclick="obj.inputLetter(3)" disabled>D</button>
-				<button type="button" class="button" onclick="obj.inputLetter(5)" disabled>F</button>
-				<button type="button" class="button" onclick="obj.inputLetter(6)" disabled>G</button>
-				<button type="button" class="button" onclick="obj.inputLetter(7)" disabled>H</button>
-				<button type="button" class="button" onclick="obj.inputLetter(9)" disabled>J</button>
-				<button type="button" class="button" onclick="obj.inputLetter(10)" disabled>K</button>
-			</div>
-			<div class="keyboard__block">
-				<button type="button" class="button" onclick="obj.inputLetter(15)" disabled>P</button>
-				<button type="button" class="button" onclick="obj.inputLetter(24)" disabled>Y</button>
-				<button type="button" class="button" onclick="obj.inputLetter(23)" disabled>X</button>
-				<button type="button" class="button" onclick="obj.inputLetter(2)" disabled>C</button>
-				<button type="button" class="button" onclick="obj.inputLetter(21)" disabled>V</button>
-				<button type="button" class="button" onclick="obj.inputLetter(1)" disabled>B</button>
-				<button type="button" class="button" onclick="obj.inputLetter(13)" disabled>N</button>
-				<button type="button" class="button" onclick="obj.inputLetter(12)" disabled>M</button>
-				<button type="button" class="button" onclick="obj.inputLetter(11)" disabled>L</button>
-			</div>
-		</div>
-		<div id="wiring">
-			<div class="wiring__block">
-				<div class="wiring__block__letter">
-					<p>Q</p>
-					<button type="button" class="wiringButton" onclick="wiring(16)" disabled id="wiringButtonQ"></button>
-				</div>
-
-				<div class="wiring__block__letter">
-					<p>W</p>
-					<button type="button" class="wiringButton" onclick="wiring(22)" disabled id="wiringButtonW"></button>
-				</div>
-
-				<div class="wiring__block__letter">
-					<p>E</p>
-					<button type="button" class="wiringButton" onclick="wiring(4)" disabled id="wiringButtonE"></button>
-				</div>
-
-				<div class="wiring__block__letter">
-					<p>R</p>
-					<button type="button" class="wiringButton" onclick="wiring(17)" disabled id="wiringButtonR"></button>
-				</div>
-
-				<div class="wiring__block__letter">
-					<p>T</p>
-					<button type="button" class="wiringButton" onclick="wiring(19)" disabled id="wiringButtonT"></button>
-				</div>
-
-				<div class="wiring__block__letter">
-					<p>Z</p>
-					<button type="button" class="wiringButton" onclick="wiring(25)" disabled id="wiringButtonZ"></button>
-				</div>
-
-				<div class="wiring__block__letter">
-					<p>U</p>
-					<button type="button" class="wiringButton" onclick="wiring(20)" disabled id="wiringButtonU"></button>
-				</div>
-
-				<div class="wiring__block__letter">
-					<p>I</p>
-					<button type="button" class="wiringButton" onclick="wiring(8)" disabled id="wiringButtonI"></button>
-				</div>
-
-				<div class="wiring__block__letter">
-					<p>O</p>
-					<button type="button" class="wiringButton" onclick="wiring(14)" disabled id="wiringButtonO"></button>
+				<div id="lights">
+					<div class="lights__block">
+						<div class="lights__letter" id="lights__letter__Q"><p>Q</p></div>
+						<div class="lights__letter" id="lights__letter__W"><p>w</p></div>
+						<div class="lights__letter" id="lights__letter__E"><p>E</p></div>
+						<div class="lights__letter" id="lights__letter__R"><p>R</p></div>
+						<div class="lights__letter" id="lights__letter__T"><p>T</p></div>
+						<div class="lights__letter" id="lights__letter__Z"><p>Z</p></div>
+						<div class="lights__letter" id="lights__letter__U"><p>U</p></div>
+						<div class="lights__letter" id="lights__letter__I"><p>I</p></div>
+						<div class="lights__letter" id="lights__letter__O"><p>O</p></div>
+					</div>
+					<div class="lights__block">
+						<div class="lights__letter" id="lights__letter__A"><p>A</p></div>
+						<div class="lights__letter" id="lights__letter__S"><p>S</p></div>
+						<div class="lights__letter" id="lights__letter__D"><p>D</p></div>
+						<div class="lights__letter" id="lights__letter__F"><p>F</p></div>
+						<div class="lights__letter" id="lights__letter__G"><p>G</p></div>
+						<div class="lights__letter" id="lights__letter__H"><p>H</p></div>
+						<div class="lights__letter" id="lights__letter__J"><p>J</p></div>
+						<div class="lights__letter" id="lights__letter__K"><p>K</p></div>
+					</div>
+					<div class="lights__block">
+						<div class="lights__letter" id="lights__letter__P"><p>P</p></div>
+						<div class="lights__letter" id="lights__letter__Y"><p>Y</p></div>
+						<div class="lights__letter" id="lights__letter__X"><p>X</p></div>
+						<div class="lights__letter" id="lights__letter__C"><p>C</p></div>
+						<div class="lights__letter" id="lights__letter__V"><p>V</p></div>
+						<div class="lights__letter" id="lights__letter__B"><p>B</p></div>
+						<div class="lights__letter" id="lights__letter__N"><p>N</p></div>
+						<div class="lights__letter" id="lights__letter__M"><p>M</p></div>
+						<div class="lights__letter" id="lights__letter__L"><p>L</p></div>
+					</div>
 				</div>
 			</div>
-			<div class="wiring__block">
-				<div class="wiring__block__letter">
-					<p>A</p>
-					<button type="button" class="wiringButton" onclick="wiring(0)" disabled id="wiringButtonA"></button>
+			<div id="keyboard">
+				<div class="keyboard__block">
+					<button type="button" class="button" onclick="obj.inputLetter(16)" disabled>Q</button>
+					<button type="button" class="button" onclick="obj.inputLetter(22)" disabled>W</button>
+					<button type="button" class="button" onclick="obj.inputLetter(4)" disabled>E</button>
+					<button type="button" class="button" onclick="obj.inputLetter(17)" disabled>R</button>
+					<button type="button" class="button" onclick="obj.inputLetter(19)" disabled>T</button>
+					<button type="button" class="button" onclick="obj.inputLetter(25)" disabled>Z</button>
+					<button type="button" class="button" onclick="obj.inputLetter(20)" disabled>U</button>
+					<button type="button" class="button" onclick="obj.inputLetter(8)" disabled>I</button>
+					<button type="button" class="button" onclick="obj.inputLetter(14)" disabled>O</button>
 				</div>
-
-				<div class="wiring__block__letter">
-					<p>S</p>
-					<button type="button" class="wiringButton" onclick="wiring(18)" disabled id="wiringButtonS"></button>
+				<div class="keyboard__block">
+					<button type="button" class="button" onclick="obj.inputLetter(0)" disabled>A</button>
+					<button type="button" class="button" onclick="obj.inputLetter(18)" disabled>S</button>
+					<button type="button" class="button" onclick="obj.inputLetter(3)" disabled>D</button>
+					<button type="button" class="button" onclick="obj.inputLetter(5)" disabled>F</button>
+					<button type="button" class="button" onclick="obj.inputLetter(6)" disabled>G</button>
+					<button type="button" class="button" onclick="obj.inputLetter(7)" disabled>H</button>
+					<button type="button" class="button" onclick="obj.inputLetter(9)" disabled>J</button>
+					<button type="button" class="button" onclick="obj.inputLetter(10)" disabled>K</button>
 				</div>
-
-				<div class="wiring__block__letter">
-					<p>D</p>
-					<button type="button" class="wiringButton" onclick="wiring(3)" disabled id="wiringButtonD"></button>
-				</div>
-
-				<div class="wiring__block__letter">
-					<p>F</p>
-					<button type="button" class="wiringButton" onclick="wiring(5)" disabled id="wiringButtonF"></button>
-				</div>
-
-				<div class="wiring__block__letter">
-					<p>G</p>
-					<button type="button" class="wiringButton" onclick="wiring(6)" disabled id="wiringButtonG"></button>
-				</div>
-
-				<div class="wiring__block__letter">
-					<p>H</p>
-					<button type="button" class="wiringButton" onclick="wiring(7)" disabled id="wiringButtonH"></button>
-				</div>
-
-				<div class="wiring__block__letter">
-					<p>J</p>
-					<button type="button" class="wiringButton" onclick="wiring(9)" disabled id="wiringButtonJ"></button>
-				</div>
-
-				<div class="wiring__block__letter">
-					<p>K</p>
-					<button type="button" class="wiringButton" onclick="wiring(10)" disabled id="wiringButtonK"></button>
+				<div class="keyboard__block">
+					<button type="button" class="button" onclick="obj.inputLetter(15)" disabled>P</button>
+					<button type="button" class="button" onclick="obj.inputLetter(24)" disabled>Y</button>
+					<button type="button" class="button" onclick="obj.inputLetter(23)" disabled>X</button>
+					<button type="button" class="button" onclick="obj.inputLetter(2)" disabled>C</button>
+					<button type="button" class="button" onclick="obj.inputLetter(21)" disabled>V</button>
+					<button type="button" class="button" onclick="obj.inputLetter(1)" disabled>B</button>
+					<button type="button" class="button" onclick="obj.inputLetter(13)" disabled>N</button>
+					<button type="button" class="button" onclick="obj.inputLetter(12)" disabled>M</button>
+					<button type="button" class="button" onclick="obj.inputLetter(11)" disabled>L</button>
 				</div>
 			</div>
-			<div class="wiring__block">
-				<div class="wiring__block__letter">
-					<p>P</p>
-					<button type="button" class="wiringButton" onclick="wiring(15)" disabled id="wiringButtonP"></button>
-				</div>
+			<div id="wiring">
+				<div class="wiring__block">
+					<div class="wiring__block__letter">
+						<p>Q</p>
+						<button type="button" class="wiringButton" onclick="wiring(16)" disabled id="wiringButtonQ"></button>
+					</div>
 
-				<div class="wiring__block__letter">
-					<p>Y</p>
-					<button type="button" class="wiringButton" onclick="wiring(24)" disabled id="wiringButtonY"></button>
-				</div>
+					<div class="wiring__block__letter">
+						<p>W</p>
+						<button type="button" class="wiringButton" onclick="wiring(22)" disabled id="wiringButtonW"></button>
+					</div>
 
-				<div class="wiring__block__letter">
-					<p>X</p>
-					<button type="button" class="wiringButton" onclick="wiring(23)" disabled id="wiringButtonX"></button>
-				</div>
+					<div class="wiring__block__letter">
+						<p>E</p>
+						<button type="button" class="wiringButton" onclick="wiring(4)" disabled id="wiringButtonE"></button>
+					</div>
 
-				<div class="wiring__block__letter">
-					<p>C</p>
-					<button type="button" class="wiringButton" onclick="wiring(2)" disabled id="wiringButtonC"></button>
-				</div>
+					<div class="wiring__block__letter">
+						<p>R</p>
+						<button type="button" class="wiringButton" onclick="wiring(17)" disabled id="wiringButtonR"></button>
+					</div>
 
-				<div class="wiring__block__letter">
-					<p>V</p>
-					<button type="button" class="wiringButton" onclick="wiring(21)" disabled id="wiringButtonV"></button>
-				</div>
+					<div class="wiring__block__letter">
+						<p>T</p>
+						<button type="button" class="wiringButton" onclick="wiring(19)" disabled id="wiringButtonT"></button>
+					</div>
 
-				<div class="wiring__block__letter">
-					<p>B</p>
-					<button type="button" class="wiringButton" onclick="wiring(1)" disabled id="wiringButtonB"></button>
-				</div>
+					<div class="wiring__block__letter">
+						<p>Z</p>
+						<button type="button" class="wiringButton" onclick="wiring(25)" disabled id="wiringButtonZ"></button>
+					</div>
 
-				<div class="wiring__block__letter">
-					<p>N</p>
-					<button type="button" class="wiringButton" onclick="wiring(13)" disabled id="wiringButtonN"></button>
-				</div>
+					<div class="wiring__block__letter">
+						<p>U</p>
+						<button type="button" class="wiringButton" onclick="wiring(20)" disabled id="wiringButtonU"></button>
+					</div>
 
-				<div class="wiring__block__letter">
-					<p>M</p>
-					<button type="button" class="wiringButton" onclick="wiring(12)" disabled id="wiringButtonM"></button>
-				</div>
+					<div class="wiring__block__letter">
+						<p>I</p>
+						<button type="button" class="wiringButton" onclick="wiring(8)" disabled id="wiringButtonI"></button>
+					</div>
 
-				<div class="wiring__block__letter">
-					<p>L</p>
-					<button type="button" class="wiringButton" onclick="wiring(11)" disabled id="wiringButtonL"></button>
+					<div class="wiring__block__letter">
+						<p>O</p>
+						<button type="button" class="wiringButton" onclick="wiring(14)" disabled id="wiringButtonO"></button>
+					</div>
+				</div>
+				<div class="wiring__block">
+					<div class="wiring__block__letter">
+						<p>A</p>
+						<button type="button" class="wiringButton" onclick="wiring(0)" disabled id="wiringButtonA"></button>
+					</div>
+
+					<div class="wiring__block__letter">
+						<p>S</p>
+						<button type="button" class="wiringButton" onclick="wiring(18)" disabled id="wiringButtonS"></button>
+					</div>
+
+					<div class="wiring__block__letter">
+						<p>D</p>
+						<button type="button" class="wiringButton" onclick="wiring(3)" disabled id="wiringButtonD"></button>
+					</div>
+
+					<div class="wiring__block__letter">
+						<p>F</p>
+						<button type="button" class="wiringButton" onclick="wiring(5)" disabled id="wiringButtonF"></button>
+					</div>
+
+					<div class="wiring__block__letter">
+						<p>G</p>
+						<button type="button" class="wiringButton" onclick="wiring(6)" disabled id="wiringButtonG"></button>
+					</div>
+
+					<div class="wiring__block__letter">
+						<p>H</p>
+						<button type="button" class="wiringButton" onclick="wiring(7)" disabled id="wiringButtonH"></button>
+					</div>
+
+					<div class="wiring__block__letter">
+						<p>J</p>
+						<button type="button" class="wiringButton" onclick="wiring(9)" disabled id="wiringButtonJ"></button>
+					</div>
+
+					<div class="wiring__block__letter">
+						<p>K</p>
+						<button type="button" class="wiringButton" onclick="wiring(10)" disabled id="wiringButtonK"></button>
+					</div>
+				</div>
+				<div class="wiring__block">
+					<div class="wiring__block__letter">
+						<p>P</p>
+						<button type="button" class="wiringButton" onclick="wiring(15)" disabled id="wiringButtonP"></button>
+					</div>
+
+					<div class="wiring__block__letter">
+						<p>Y</p>
+						<button type="button" class="wiringButton" onclick="wiring(24)" disabled id="wiringButtonY"></button>
+					</div>
+
+					<div class="wiring__block__letter">
+						<p>X</p>
+						<button type="button" class="wiringButton" onclick="wiring(23)" disabled id="wiringButtonX"></button>
+					</div>
+
+					<div class="wiring__block__letter">
+						<p>C</p>
+						<button type="button" class="wiringButton" onclick="wiring(2)" disabled id="wiringButtonC"></button>
+					</div>
+
+					<div class="wiring__block__letter">
+						<p>V</p>
+						<button type="button" class="wiringButton" onclick="wiring(21)" disabled id="wiringButtonV"></button>
+					</div>
+
+					<div class="wiring__block__letter">
+						<p>B</p>
+						<button type="button" class="wiringButton" onclick="wiring(1)" disabled id="wiringButtonB"></button>
+					</div>
+
+					<div class="wiring__block__letter">
+						<p>N</p>
+						<button type="button" class="wiringButton" onclick="wiring(13)" disabled id="wiringButtonN"></button>
+					</div>
+
+					<div class="wiring__block__letter">
+						<p>M</p>
+						<button type="button" class="wiringButton" onclick="wiring(12)" disabled id="wiringButtonM"></button>
+					</div>
+
+					<div class="wiring__block__letter">
+						<p>L</p>
+						<button type="button" class="wiringButton" onclick="wiring(11)" disabled id="wiringButtonL"></button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -281,7 +283,10 @@
 				<br>
 				<p id="cleanCodeResult"></p>
 			</div>
-			<button class="setup__button" onclick="clearText()">Limpiar</button>
+			<div id="clean__button">
+				<button class="setup__button" onclick="clearText()">Limpiar</button>
+			</div>
+			
 		</div>
 	</main>
 	

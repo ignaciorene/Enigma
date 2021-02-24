@@ -20,7 +20,7 @@ var posRotor1=0;
 var posRotor2=0;
 var posRotor3=0;
 var wires={};
-var colors=["red","blue","yellow","green","violet","black","orange","grey","brown","cyan"];
+var colors=["#CD1515","#163BC8","#DCF40E","#25BF15","#AB19CF","#19C3D1","#E1911C","#2D2828","#A08242","#26E8C2"];
 var aux;
 var wiringCont=-1;
 
@@ -163,14 +163,14 @@ class enigma{
 		rawCodeText=document.getElementById("rawCodeResult").innerHTML;
 		document.getElementById("rawCodeResult").innerHTML=rawCodeText+abc[letter];
 
-		console.log(letter);
+		
 		//reemplazo letra por wiring en caso que lo haya
 		if (wires[letter]) {
 			if (wires[letter].lett!=null) {
 				letter=wires[letter].lett;
 			}
 		}
-		console.log(letter);
+		
 		//obtengo letra código		
 		let res3=0;
 		for(let i=0;i<this.rotor3.length;i++){
@@ -198,12 +198,20 @@ class enigma{
 				res1=wires[res1].lett;
 			}
 		}
-		console.log(res1);
-		console.log(this.rotor1);
-		console.log(this.rotor2);
-		console.log(this.rotor3);
-		console.log(this.reflector);
 		//muestro resultados
+		let btn="";
+		let idSelected="";
+
+		idSelected="lights__letter__"+abc[res1];
+		btn=document.getElementById(idSelected);
+		btn.style.backgroundColor="#e6f51b";
+		btn.style.color="#050505";
+
+		setTimeout(function tiempo(){
+			btn.style.backgroundColor="#050505";
+			btn.style.color="#F9FAFA";
+		}, 1000);
+
 		cleanCodeText=document.getElementById("cleanCodeResult").innerHTML;
 		document.getElementById("cleanCodeResult").innerHTML=cleanCodeText+abc[res1];	
 	}
@@ -260,13 +268,13 @@ function setup(){
 			wires[i]=null;
 		}
 
-		colors=["red","blue","yellow","green","violet","black","orange","grey","brown","cyan"];
+		colors=["#CD1515","#163BC8","#DCF40E","#25BF15","#AB19CF","#19C3D1","#E1911C","#2D2828","#A08242","#26E8C2"];
 		aux=null;
 
 		for (let i=0;i<abc.length;i++){
 			idSelected="wiringButton"+abc[i];
 			btn=document.getElementById(idSelected);
-			btn.style.backgroundColor="white";
+			btn.style.backgroundColor="#363434";
 		}
 	}	
 }
@@ -281,20 +289,17 @@ function clearText(){
 function wiring(letter){
 	let idSelected="";
 	let btn="";
-	/*idSelected="wiringButton"+abc[letter];
-	btn=document.getElementById(idSelected);
-	btn.style.backgroundColor="white";*/
 
 	if (wiringCont<=10){
 		if (wires[letter]) {
 
 			idSelected="wiringButton"+abc[letter];
 			btn=document.getElementById(idSelected);
-			btn.style.backgroundColor="white";
+			btn.style.backgroundColor="#363434";
 
 			idSelected="wiringButton"+abc[wires[letter].lett];
 			btn=document.getElementById(idSelected);
-			btn.style.backgroundColor="white";
+			btn.style.backgroundColor="#363434";
 
 			colors.unshift(wires[letter].color);
 			wires[wires[letter].lett]=null;
