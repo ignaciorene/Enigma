@@ -315,5 +315,44 @@ function wiring(letter){
 			}
 		}
 	}
+}
 
+//notas
+cables={
+	q:w,
+	w:q,
+}
+
+letter;
+var aux; //global
+colores=[{color:"red",usado:false},{color:"blue",usado:false},{color:"green",usado:false},{color:"yellow",usado:false}];
+
+cables["q"]={letter:w,color:red};
+cables["w"]={letter:q,color:red};
+
+if (cables[letter]) {
+	cables[cables[letter]]=null;
+	cables[letter]=null;
+	colores.map(color=>{
+		if (color.color==cables[letter].color){
+			return {
+				usado:false,
+				color:color.color;
+			}
+		}
+		else{
+			return color;
+		}
+	});
+}
+else{
+	if (aux) {
+		cables[letter]=aux;
+		cables[aux.letter]={letter:letter,color:aux.color};
+		aux=null;
+	}
+	else{
+		aux={letter:letter,color:};
+		//dom de pintar con color elegido
+	}
 }
