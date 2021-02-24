@@ -20,7 +20,7 @@ var posRotor1=0;
 var posRotor2=0;
 var posRotor3=0;
 var wires={};
-var colors=["#CD1515","#163BC8","#DCF40E","#25BF15","#AB19CF","#19C3D1","#E1911C","#2D2828","#A08242","#26E8C2"];
+var colors=["#CD1515","#163BC8","#DCF40E","#25BF15","#AB19CF","#19C3D1","#E1911C","#EBEDC7","#A08242","#26E8C2"];
 var aux;
 var wiringCont=-1;
 
@@ -268,7 +268,7 @@ function setup(){
 			wires[i]=null;
 		}
 
-		colors=["#CD1515","#163BC8","#DCF40E","#25BF15","#AB19CF","#19C3D1","#E1911C","#2D2828","#A08242","#26E8C2"];
+		colors=["#CD1515","#163BC8","#DCF40E","#25BF15","#AB19CF","#19C3D1","#E1911C","#EBEDC7","#A08242","#26E8C2"];
 		aux=null;
 
 		for (let i=0;i<abc.length;i++){
@@ -335,4 +335,5 @@ function wiring(letter){
 			}
 		}
 	}
+	console.log(wiringCont);
 }
