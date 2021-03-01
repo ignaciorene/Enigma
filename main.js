@@ -114,6 +114,9 @@ class enigma{
 	}
 
 	inputLetter(letter){
+		//Reproduzco sonido de teclado
+		new Audio("sound/key-sound.mp3").play();
+
 		//Giro los rotores
 		rotor1Count++;
 
