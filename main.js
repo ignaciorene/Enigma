@@ -77,7 +77,6 @@ function createRotor(id,initialPosition,rotor) {
 function moveRotor(rotor){
 	let position=1;
 	let codeList=[];
-	let codeListInLetters=[];
 	//corro el rotor un lugar
 	for(let i=0;i<rotor.length;i++){
 		if (position>rotor.length-1) {
