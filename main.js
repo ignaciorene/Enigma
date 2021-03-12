@@ -125,10 +125,10 @@ class enigma{
 		posRotor1++;
 		if (posRotor1%26==0) {
 			posRotor1=0;
-			document.getElementById("rotor__wheel3").innerHTML=abc[posRotor1];
+			document.getElementById("enigmaMachine__rotors--wheel3").innerHTML=abc[posRotor1];
 		}
 		else{
-			document.getElementById("rotor__wheel3").innerHTML=abc[posRotor1];
+			document.getElementById("enigmaMachine__rotors--wheel3").innerHTML=abc[posRotor1];
 		}
 
 		//si da una vuelta entonces giro el segundo rotor
@@ -139,10 +139,10 @@ class enigma{
 			posRotor2++;
 			if (posRotor2%26==0) {
 				posRotor2=0;
-				document.getElementById("rotor__wheel2").innerHTML=abc[posRotor2];
+				document.getElementById("enigmaMachine__rotors--wheel2").innerHTML=abc[posRotor2];
 			}
 			else{
-				document.getElementById("rotor__wheel2").innerHTML=abc[posRotor2];
+				document.getElementById("enigmaMachine__rotors--wheel2").innerHTML=abc[posRotor2];
 			}
 		}
 
@@ -154,16 +154,16 @@ class enigma{
 			posRotor3++;
 			if (posRotor3%26==0) {
 				posRotor3=0;
-				document.getElementById("rotor__wheel1").innerHTML=abc[posRotor3];
+				document.getElementById("enigmaMachine__rotors--wheel1").innerHTML=abc[posRotor3];
 			}
 			else{
-				document.getElementById("rotor__wheel1").innerHTML=abc[posRotor3];
+				document.getElementById("enigmaMachine__rotors--wheel1").innerHTML=abc[posRotor3];
 			}
 		}
 
 		//muestro lo ingresado
-		rawCodeText=document.getElementById("rawCodeResult").innerHTML;
-		document.getElementById("rawCodeResult").innerHTML=rawCodeText+abc[letter];
+		rawCodeText=document.getElementById("result__rawCode--p").innerHTML;
+		document.getElementById("result__rawCode--p").innerHTML=rawCodeText+abc[letter];
 
 		
 		//reemplazo letra por wiring en caso que lo haya
@@ -204,7 +204,7 @@ class enigma{
 		let btn="";
 		let idSelected="";
 
-		idSelected="lights__letter__"+abc[res1];
+		idSelected="enigmaMachine__lights__block--letter--"+abc[res1];
 		btn=document.getElementById(idSelected);
 		btn.style.backgroundColor="#e6f51b";
 		btn.style.color="#050505";
@@ -214,8 +214,8 @@ class enigma{
 			btn.style.color="#F9FAFA";
 		}, 1000);
 
-		cleanCodeText=document.getElementById("cleanCodeResult").innerHTML;
-		document.getElementById("cleanCodeResult").innerHTML=cleanCodeText+abc[res1];	
+		cleanCodeText=document.getElementById("result__cleanCode--p").innerHTML;
+		document.getElementById("result__cleanCode--p").innerHTML=cleanCodeText+abc[res1];	
 	}
 }
 
@@ -235,14 +235,14 @@ function setup(){
 	}
 	else{
 		document.getElementById("errorMessage").innerHTML="";
-		document.getElementById("main__setup__button").innerHTML="Reiniciar";
+		document.getElementById("setup__button--button").innerHTML="Reiniciar";
 		//habilito botones
-		var inputs = document.getElementsByClassName('button');
+		var inputs = document.getElementsByClassName('enigmaMachine__keyboard__block--button');
 		for(var i = 0; i < inputs.length; i++) {
 			inputs[i].disabled = false;
 		}
 
-		inputs = document.getElementsByClassName('wiringButton');
+		inputs = document.getElementsByClassName('enigmaMachine__wiring__block__letter--button');
 		for(var i = 0; i < inputs.length; i++) {
 			inputs[i].disabled = false;
 		}
@@ -251,9 +251,9 @@ function setup(){
 		obj=new enigma(reflec,rot3,rot3Initial-1,rot2,rot2Initial-1,rot1,rot1Initial-1);
 
 		//ajusto la imagen de los rotores
-		document.getElementById("rotor__wheel1").innerHTML=abc[rot1Initial-1];
-		document.getElementById("rotor__wheel2").innerHTML=abc[rot2Initial-1];
-		document.getElementById("rotor__wheel3").innerHTML=abc[rot3Initial-1];
+		document.getElementById("enigmaMachine__rotors--wheel1").innerHTML=abc[rot1Initial-1];
+		document.getElementById("enigmaMachine__rotors--wheel2").innerHTML=abc[rot2Initial-1];
+		document.getElementById("enigmaMachine__rotors--wheel3").innerHTML=abc[rot3Initial-1];
 
 		posRotor1=rot1Initial-1;
 		posRotor2=rot2Initial-1;
@@ -262,8 +262,8 @@ function setup(){
 		//limpio datos y selecciones
 		rawCodeText=" ";
 		cleanCodeText=" ";
-		document.getElementById("rawCodeResult").innerHTML=rawCodeText;
-		document.getElementById("cleanCodeResult").innerHTML=cleanCodeText;
+		document.getElementById("result__rawCode--p").innerHTML=rawCodeText;
+		document.getElementById("result__cleanCode--p").innerHTML=cleanCodeText;
 
 		wiringCont=0;
 		for (i in wires){
@@ -274,7 +274,7 @@ function setup(){
 		aux=null;
 
 		for (let i=0;i<abc.length;i++){
-			idSelected="wiringButton"+abc[i];
+			idSelected="enigmaMachine__wiring__block__letter--button"+abc[i];
 			btn=document.getElementById(idSelected);
 			btn.style.backgroundColor="#363434";
 		}
@@ -284,8 +284,8 @@ function setup(){
 function clearText(){
 	rawCodeText=" ";
 	cleanCodeText=" ";
-	document.getElementById("rawCodeResult").innerHTML=rawCodeText;
-	document.getElementById("cleanCodeResult").innerHTML=cleanCodeText;
+	document.getElementById("result__rawCode--p").innerHTML=rawCodeText;
+	document.getElementById("result__cleanCode--p").innerHTML=cleanCodeText;
 }
 
 function wiring(letter){
@@ -295,11 +295,11 @@ function wiring(letter){
 	if (wiringCont<=10){
 		if (wires[letter]) {
 
-			idSelected="wiringButton"+abc[letter];
+			idSelected="enigmaMachine__wiring__block__letter--button"+abc[letter];
 			btn=document.getElementById(idSelected);
 			btn.style.backgroundColor="#363434";
 
-			idSelected="wiringButton"+abc[wires[letter].lett];
+			idSelected="enigmaMachine__wiring__block__letter--button"+abc[wires[letter].lett];
 			btn=document.getElementById(idSelected);
 			btn.style.backgroundColor="#363434";
 
@@ -316,19 +316,19 @@ function wiring(letter){
 				wires[aux.lett]={lett:letter,color:aux.color};
 				aux=null;
 		
-				idSelected="wiringButton"+abc[letter];
+				idSelected="enigmaMachine__wiring__block__letter--button"+abc[letter];
 				btn=document.getElementById(idSelected);
 				btn.style.backgroundColor=colors.shift(wires[letter].color);
 			}
 			else if(aux==null && wiringCont<10){
 				aux={lett:letter,color:colors[0]};
 				if (wiringCont==0) {
-					idSelected="wiringButton"+abc[letter];
+					idSelected="enigmaMachine__wiring__block__letter--button"+abc[letter];
 					btn=document.getElementById(idSelected);
 					btn.style.backgroundColor=aux.color;
 				}
 				else{
-					idSelected="wiringButton"+abc[letter];
+					idSelected="enigmaMachine__wiring__block__letter--button"+abc[letter];
 					btn=document.getElementById(idSelected);
 					btn.style.backgroundColor=aux.color;
 				}

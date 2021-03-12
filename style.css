@@ -23,16 +23,16 @@ main{
 	color: #F9FAFA;
 }
 
-#titles{
+.setup__titles{
 	width: 100%;
 }
 
-h1{
+.setup__titles--h1{
 	font-size: 5em;
 	margin: 0;
 }
 
-.rotors__box{
+.setup__rotors__box{
 	display: inline-block;
 	text-align: center;
 	word-wrap: break-word;
@@ -40,18 +40,18 @@ h1{
 }
 
 
-.inputs{
+.setup__rotors__box--inputs{
 	text-align: center;
 	margin: auto;
 	font-size: 1em;
 	width: 2em;
 }
 
-#setup__button{
+.setup__button{
 	width: 100%;
 }
 
-.setup__button{
+.setup__button--button{
 	font-size: 1.25em;
 	margin-top: 1.2em;
 	padding: 0.5em;
@@ -60,17 +60,17 @@ h1{
 	background-color: #eee6e6;
 }
 
-.setup__button:focus{
+.setup__button--button:focus{
 	border: 2px solid #050505;
 	outline: none;
 }
 
-.setup__button:active{
+.setup__button--button:active{
 	border: 2px solid #050505;
 	outline: none;
 }
 
-.setup__button:hover{
+.setup__button--button:hover{
 	cursor: pointer;
 }
 
@@ -79,7 +79,7 @@ h1{
 	font-size: 1em;
 }
 
-#enigmaMachine{
+.enigmaMachine{
 	width: 70%;
 	margin: auto;
 	padding: 1em;
@@ -89,7 +89,7 @@ h1{
 	background-size: cover;
 }
 
-#top{
+.enigmaMachine__top{
 	width: 100%;
 	margin: auto;
 	padding-top: 1em;
@@ -98,11 +98,11 @@ h1{
 	color: #F9FAFA;
 }
 
-#rotors{
+.enigmaMachine__rotors{
 	width: 100%;
 }
 
-.rotors__wheel{
+.enigmaMachine__rotors--wheel{
 	background-color: #F9FAFA;
 	display: inline-block;
 	padding: 0.5em;
@@ -114,7 +114,7 @@ h1{
 	height: 3em;
 }
 
-#lights{
+.enigmaMachine__lights{
 	width: 100%;
 	margin: auto;
 	background-color: #050505;
@@ -124,11 +124,11 @@ h1{
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.lights__blocks{
+.enigmaMachine__lights__blocks{
 	width: 100%;
 }
 
-.lights__letter{
+.enigmaMachine__lights__block--letter{
 	border: none;
 	display: inline-block;
 	margin: 0.5em;
@@ -139,13 +139,13 @@ h1{
 	border:1px solid #9D9A9A;
 }
 
-.lights__letter p{
+.enigmaMachine__lights__block--letter p{
 	position: relative;
 	margin-top: 15%;
 	margin-right: 5%;
 }
 
-#keyboard{
+.enigmaMachine__keyboard{
 	width: 100%;
 	margin: auto;
 	background-color: #050505;
@@ -153,11 +153,11 @@ h1{
 	padding-bottom: 1em;
 }
 
-.keyboard__block{
+.enigmaMachine__keyboard__block{
 	width: 100%;
 }
 
-.button{
+.enigmaMachine__keyboard__block--button{
 	display: inline-block;
 	width: 2em;
 	height: 2em;
@@ -169,18 +169,18 @@ h1{
 	background-color: #363434;
 }
 
-.button:active{
+.enigmaMachine__keyboard__block--button:active{
 	width: 1.8em;
 	height: 1.8em;
 	font-size: 0.675em;
 	margin: 0.2em 0.75em 0.5em 0.75em;
 }
 
-.button:focus{
+.enigmaMachine__keyboard__block--button:focus{
 	outline: none;
 }
 
-#wiring{
+.enigmaMachine__wiring{
 	width: 100%;
 	margin: auto;
 	background-color: #050505;
@@ -189,18 +189,18 @@ h1{
 	border-top: 5px solid rgba(86, 86, 86, 0.5);
 }
 
-.wiring__block__letter{
+.enigmaMachine__wiring__block__letter{
 	display: inline-block;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
 }
 
-.wiring__block__letter p{
+.enigmaMachine__wiring__block__letter p{
 	font-size: 0.80em;
 	margin: 0.2em;
 }
 
-.wiringButton{
+.enigmaMachine__wiring__block__letter--button{
 	display: inline-block;
 	width: 1.5em;
 	height: 1.5em;
@@ -210,14 +210,14 @@ h1{
 	border:2px solid #9D9A9A;
 }
 
-.wiringButton:focus{
+.enigmaMachine__wiring__block__letter--button:focus{
 	outline: none;
 }
 
-#result{
+.result{
 	width: 72.5%;
 	margin: auto;
-	margin-top: 2em;
+	margin-top: 1em;
 	margin-bottom: 1em;
 	background-image: url("img/wooden.jpg");
 	background-position: center;
@@ -227,7 +227,7 @@ h1{
 	padding-bottom: 1em;
 }
 
-#rawCode{
+.result__rawCode{
 	display: inline-block;
 	width: 35%;
 	border: 1px solid black;
@@ -241,7 +241,7 @@ h1{
 	overflow-y: auto;
 }
 
-#rawCodeResult{
+#result__rawCode--p{
 	font-size: 0.85em;
 	font-weight: normal;
 	font-family: 'Permanent Marker', cursive;
@@ -249,7 +249,7 @@ h1{
 	margin: auto;
 }
 
-#cleanCode{
+.result__cleanCode{
 	display: inline-block;
 	width: 35%;
 	border: 1px solid black;
@@ -263,7 +263,7 @@ h1{
 	overflow-y: auto;
 }
 
-#cleanCodeResult{
+#result__cleanCode--p{
 	font-size: 0.85em;
 	font-weight: normal;
 	font-family: 'Permanent Marker', cursive;
@@ -271,6 +271,6 @@ h1{
 	margin: auto;
 }
 
-#clean__button{
+.result__clean{
 	width: 100%;
 }

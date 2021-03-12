@@ -12,279 +12,279 @@
 	<script type="text/javascript" src="main.js"></script>
 	<main>
 		<div id="setup">
-			<div id="titles">
-				<h1>ENIGMA</h1>
-				<h3>Ingrese datos de rotores</h2>
+			<div class="setup__titles">
+				<h1 class="setup__titles--h1">ENIGMA</h1>
+				<h3 class="setup__titles--h3">Ingrese datos de rotores</h2>
 			</div>
-			<div id="rotors__setup">
-				<div class="rotors__box">
-					<p class="rotors__title">Reflector</p>
-					<input type="number" min="1" max="2" value="1" name="number" class="inputs" id="reflec">
+			<div id="setup__rotors">
+				<div class="setup__rotors__box">
+					<p class="setup__rotors__box--title">Reflector</p>
+					<input type="number" min="1" max="2" value="1" name="number" class="setup__rotors__box--inputs" id="reflec">
 				</div>
 
-				<div class="rotors__box">
-					<p class="rotors__title">Rotor 1</p>
-					<input type="number" min="1" max="8" value="1" name="number" class="inputs" id="rot1">
+				<div class="setup__rotors__box">
+					<p class="setup__rotors__box--title">Rotor 1</p>
+					<input type="number" min="1" max="8" value="1" name="number" class="setup__rotors__box--inputs" id="rot1">
 				</div>
 
-				<div class="rotors__box">
-					<p class="rotors__title">1- Inicio</p>
-					<input type="number" min="1" max="26" value="1" name="number" class="inputs" id="rot1Initial">
+				<div class="setup__rotors__box">
+					<p class="setup__rotors__box--title">1- Inicio</p>
+					<input type="number" min="1" max="26" value="1" name="number" class="setup__rotors__box--inputs" id="rot1Initial">
 				</div>
 
-				<div class="rotors__box">
-					<p class="rotors__title">Rotor 2</p>
-					<input type="number" min="1" max="8" value="2" name="number" class="inputs" id="rot2">
+				<div class="setup__rotors__box">
+					<p class="setup__rotors__box--title">Rotor 2</p>
+					<input type="number" min="1" max="8" value="2" name="number" class="setup__rotors__box--inputs" id="rot2">
 				</div>
 
-				<div class="rotors__box">
-					<p class="rotors__title">2- Inicio</p>
-					<input type="number" min="1" max="26" value="1" name="number" class="inputs" id="rot2Initial">
+				<div class="setup__rotors__box">
+					<p class="setup__rotors__box--title">2- Inicio</p>
+					<input type="number" min="1" max="26" value="1" name="number" class="setup__rotors__box--inputs" id="rot2Initial">
 				</div>
 
-				<div class="rotors__box">
-					<p class="rotors__title">Rotor 3</p>
-					<input type="number" min="1" max="8" value="3" name="number" class="inputs" id="rot3">
+				<div class="setup__rotors__box">
+					<p class="setup__rotors__box--title">Rotor 3</p>
+					<input type="number" min="1" max="8" value="3" name="number" class="setup__rotors__box--inputs" id="rot3">
 				</div>
 
-				<div class="rotors__box">
-					<p class="rotors__title">3- Inicio</p>
-					<input type="number" min="1" max="26" value="1" name="number" class="inputs" id="rot3Initial">
+				<div class="setup__rotors__box">
+					<p class="setup__rotors__box--title">3- Inicio</p>
+					<input type="number" min="1" max="26" value="1" name="number" class="setup__rotors__box--inputs" id="rot3Initial">
 				</div>
 
-				<div id="setup__button">
-					<button type="button" class="setup__button" onclick="setup()" id="main__setup__button">Confirmar</button>
+				<div class="setup__button">
+					<button type="button" class="setup__button--button" onclick="setup()" id="setup__button--button">Confirmar</button>
 					<p id="errorMessage"></p>
 				</div>
 			</div>
 			
 		</div>
-		<div id="enigmaMachine">
-			<div id="top">
-				<div id="rotors">
-					<div class="rotors__wheel"><p id="rotor__wheel1">A</p></div>
-					<div class="rotors__wheel"><p id="rotor__wheel2">A</p></div>
-					<div class="rotors__wheel"><p id="rotor__wheel3">A</p></div>
+		<div class="enigmaMachine">
+			<div class="enigmaMachine__top">
+				<div class="enigmaMachine__rotors">
+					<div class="enigmaMachine__rotors--wheel"><p id="enigmaMachine__rotors--wheel1">A</p></div>
+					<div class="enigmaMachine__rotors--wheel"><p id="enigmaMachine__rotors--wheel2">A</p></div>
+					<div class="enigmaMachine__rotors--wheel"><p id="enigmaMachine__rotors--wheel3">A</p></div>
 				</div>
-				<div id="lights">
-					<div class="lights__block">
-						<div class="lights__letter" id="lights__letter__Q"><p>Q</p></div>
-						<div class="lights__letter" id="lights__letter__W"><p>w</p></div>
-						<div class="lights__letter" id="lights__letter__E"><p>E</p></div>
-						<div class="lights__letter" id="lights__letter__R"><p>R</p></div>
-						<div class="lights__letter" id="lights__letter__T"><p>T</p></div>
-						<div class="lights__letter" id="lights__letter__Z"><p>Z</p></div>
-						<div class="lights__letter" id="lights__letter__U"><p>U</p></div>
-						<div class="lights__letter" id="lights__letter__I"><p>I</p></div>
-						<div class="lights__letter" id="lights__letter__O"><p>O</p></div>
+				<div class="enigmaMachine__lights">
+					<div class="enigmaMachine__lights__block">
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--Q"><p>Q</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--W"><p>w</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--E"><p>E</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--R"><p>R</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--T"><p>T</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--Z"><p>Z</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--U"><p>U</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--I"><p>I</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--O"><p>O</p></div>
 					</div>
-					<div class="lights__block">
-						<div class="lights__letter" id="lights__letter__A"><p>A</p></div>
-						<div class="lights__letter" id="lights__letter__S"><p>S</p></div>
-						<div class="lights__letter" id="lights__letter__D"><p>D</p></div>
-						<div class="lights__letter" id="lights__letter__F"><p>F</p></div>
-						<div class="lights__letter" id="lights__letter__G"><p>G</p></div>
-						<div class="lights__letter" id="lights__letter__H"><p>H</p></div>
-						<div class="lights__letter" id="lights__letter__J"><p>J</p></div>
-						<div class="lights__letter" id="lights__letter__K"><p>K</p></div>
+					<div class="enigmaMachine__lights__block">
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--A"><p>A</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--S"><p>S</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--D"><p>D</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--F"><p>F</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--G"><p>G</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--H"><p>H</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--J"><p>J</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--K"><p>K</p></div>
 					</div>
-					<div class="lights__block">
-						<div class="lights__letter" id="lights__letter__P"><p>P</p></div>
-						<div class="lights__letter" id="lights__letter__Y"><p>Y</p></div>
-						<div class="lights__letter" id="lights__letter__X"><p>X</p></div>
-						<div class="lights__letter" id="lights__letter__C"><p>C</p></div>
-						<div class="lights__letter" id="lights__letter__V"><p>V</p></div>
-						<div class="lights__letter" id="lights__letter__B"><p>B</p></div>
-						<div class="lights__letter" id="lights__letter__N"><p>N</p></div>
-						<div class="lights__letter" id="lights__letter__M"><p>M</p></div>
-						<div class="lights__letter" id="lights__letter__L"><p>L</p></div>
+					<div class="enigmaMachine__lights__block">
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--P"><p>P</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--Y"><p>Y</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--X"><p>X</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--C"><p>C</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--V"><p>V</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--B"><p>B</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--N"><p>N</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--M"><p>M</p></div>
+						<div class="enigmaMachine__lights__block--letter" id="enigmaMachine__lights__block--letter--L"><p>L</p></div>
 					</div>
 				</div>
 			</div>
-			<div id="keyboard">
-				<div class="keyboard__block">
-					<button type="button" class="button" onclick="obj.inputLetter(16)" disabled>Q</button>
-					<button type="button" class="button" onclick="obj.inputLetter(22)" disabled>W</button>
-					<button type="button" class="button" onclick="obj.inputLetter(4)" disabled>E</button>
-					<button type="button" class="button" onclick="obj.inputLetter(17)" disabled>R</button>
-					<button type="button" class="button" onclick="obj.inputLetter(19)" disabled>T</button>
-					<button type="button" class="button" onclick="obj.inputLetter(25)" disabled>Z</button>
-					<button type="button" class="button" onclick="obj.inputLetter(20)" disabled>U</button>
-					<button type="button" class="button" onclick="obj.inputLetter(8)" disabled>I</button>
-					<button type="button" class="button" onclick="obj.inputLetter(14)" disabled>O</button>
+			<div class="enigmaMachine__keyboard">
+				<div class="enigmaMachine__keyboard__block">
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(16)" disabled>Q</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(22)" disabled>W</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(4)" disabled>E</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(17)" disabled>R</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(19)" disabled>T</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(25)" disabled>Z</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(20)" disabled>U</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(8)" disabled>I</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(14)" disabled>O</button>
 				</div>
-				<div class="keyboard__block">
-					<button type="button" class="button" onclick="obj.inputLetter(0)" disabled>A</button>
-					<button type="button" class="button" onclick="obj.inputLetter(18)" disabled>S</button>
-					<button type="button" class="button" onclick="obj.inputLetter(3)" disabled>D</button>
-					<button type="button" class="button" onclick="obj.inputLetter(5)" disabled>F</button>
-					<button type="button" class="button" onclick="obj.inputLetter(6)" disabled>G</button>
-					<button type="button" class="button" onclick="obj.inputLetter(7)" disabled>H</button>
-					<button type="button" class="button" onclick="obj.inputLetter(9)" disabled>J</button>
-					<button type="button" class="button" onclick="obj.inputLetter(10)" disabled>K</button>
+				<div class="enigmaMachine__keyboard__block">
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(0)" disabled>A</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(18)" disabled>S</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(3)" disabled>D</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(5)" disabled>F</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(6)" disabled>G</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(7)" disabled>H</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(9)" disabled>J</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(10)" disabled>K</button>
 				</div>
-				<div class="keyboard__block">
-					<button type="button" class="button" onclick="obj.inputLetter(15)" disabled>P</button>
-					<button type="button" class="button" onclick="obj.inputLetter(24)" disabled>Y</button>
-					<button type="button" class="button" onclick="obj.inputLetter(23)" disabled>X</button>
-					<button type="button" class="button" onclick="obj.inputLetter(2)" disabled>C</button>
-					<button type="button" class="button" onclick="obj.inputLetter(21)" disabled>V</button>
-					<button type="button" class="button" onclick="obj.inputLetter(1)" disabled>B</button>
-					<button type="button" class="button" onclick="obj.inputLetter(13)" disabled>N</button>
-					<button type="button" class="button" onclick="obj.inputLetter(12)" disabled>M</button>
-					<button type="button" class="button" onclick="obj.inputLetter(11)" disabled>L</button>
+				<div class="enigmaMachine__keyboard__block">
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(15)" disabled>P</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(24)" disabled>Y</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(23)" disabled>X</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(2)" disabled>C</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(21)" disabled>V</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(1)" disabled>B</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(13)" disabled>N</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(12)" disabled>M</button>
+					<button type="button" class="enigmaMachine__keyboard__block--button" onclick="obj.inputLetter(11)" disabled>L</button>
 				</div>
 			</div>
-			<div id="wiring">
-				<div class="wiring__block">
-					<div class="wiring__block__letter">
+			<div class="enigmaMachine__wiring">
+				<div class="enigmaMachine__wiring__block">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>Q</p>
-						<button type="button" class="wiringButton" onclick="wiring(16)" disabled id="wiringButtonQ"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(16)" disabled id="enigmaMachine__wiring__block__letter--buttonQ"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>W</p>
-						<button type="button" class="wiringButton" onclick="wiring(22)" disabled id="wiringButtonW"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(22)" disabled id="enigmaMachine__wiring__block__letter--buttonW"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>E</p>
-						<button type="button" class="wiringButton" onclick="wiring(4)" disabled id="wiringButtonE"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(4)" disabled id="enigmaMachine__wiring__block__letter--buttonE"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>R</p>
-						<button type="button" class="wiringButton" onclick="wiring(17)" disabled id="wiringButtonR"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(17)" disabled id="enigmaMachine__wiring__block__letter--buttonR"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>T</p>
-						<button type="button" class="wiringButton" onclick="wiring(19)" disabled id="wiringButtonT"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(19)" disabled id="enigmaMachine__wiring__block__letter--buttonT"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>Z</p>
-						<button type="button" class="wiringButton" onclick="wiring(25)" disabled id="wiringButtonZ"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(25)" disabled id="enigmaMachine__wiring__block__letter--buttonZ"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>U</p>
-						<button type="button" class="wiringButton" onclick="wiring(20)" disabled id="wiringButtonU"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(20)" disabled id="enigmaMachine__wiring__block__letter--buttonU"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>I</p>
-						<button type="button" class="wiringButton" onclick="wiring(8)" disabled id="wiringButtonI"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(8)" disabled id="enigmaMachine__wiring__block__letter--buttonI"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>O</p>
-						<button type="button" class="wiringButton" onclick="wiring(14)" disabled id="wiringButtonO"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(14)" disabled id="enigmaMachine__wiring__block__letter--buttonO"></button>
 					</div>
 				</div>
-				<div class="wiring__block">
-					<div class="wiring__block__letter">
+				<div class="enigmaMachine__wiring__block">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>A</p>
-						<button type="button" class="wiringButton" onclick="wiring(0)" disabled id="wiringButtonA"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(0)" disabled id="enigmaMachine__wiring__block__letter--buttonA"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>S</p>
-						<button type="button" class="wiringButton" onclick="wiring(18)" disabled id="wiringButtonS"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(18)" disabled id="enigmaMachine__wiring__block__letter--buttonS"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>D</p>
-						<button type="button" class="wiringButton" onclick="wiring(3)" disabled id="wiringButtonD"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(3)" disabled id="enigmaMachine__wiring__block__letter--buttonD"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>F</p>
-						<button type="button" class="wiringButton" onclick="wiring(5)" disabled id="wiringButtonF"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(5)" disabled id="enigmaMachine__wiring__block__letter--buttonF"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>G</p>
-						<button type="button" class="wiringButton" onclick="wiring(6)" disabled id="wiringButtonG"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(6)" disabled id="enigmaMachine__wiring__block__letter--buttonG"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>H</p>
-						<button type="button" class="wiringButton" onclick="wiring(7)" disabled id="wiringButtonH"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(7)" disabled id="enigmaMachine__wiring__block__letter--buttonH"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>J</p>
-						<button type="button" class="wiringButton" onclick="wiring(9)" disabled id="wiringButtonJ"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(9)" disabled id="enigmaMachine__wiring__block__letter--buttonJ"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>K</p>
-						<button type="button" class="wiringButton" onclick="wiring(10)" disabled id="wiringButtonK"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(10)" disabled id="enigmaMachine__wiring__block__letter--buttonK"></button>
 					</div>
 				</div>
-				<div class="wiring__block">
-					<div class="wiring__block__letter">
+				<div class="enigmaMachine__wiring__block">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>P</p>
-						<button type="button" class="wiringButton" onclick="wiring(15)" disabled id="wiringButtonP"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(15)" disabled id="enigmaMachine__wiring__block__letter--buttonP"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>Y</p>
-						<button type="button" class="wiringButton" onclick="wiring(24)" disabled id="wiringButtonY"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(24)" disabled id="enigmaMachine__wiring__block__letter--buttonY"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>X</p>
-						<button type="button" class="wiringButton" onclick="wiring(23)" disabled id="wiringButtonX"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(23)" disabled id="enigmaMachine__wiring__block__letter--buttonX"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>C</p>
-						<button type="button" class="wiringButton" onclick="wiring(2)" disabled id="wiringButtonC"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(2)" disabled id="enigmaMachine__wiring__block__letter--buttonC"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>V</p>
-						<button type="button" class="wiringButton" onclick="wiring(21)" disabled id="wiringButtonV"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(21)" disabled id="enigmaMachine__wiring__block__letter--buttonV"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>B</p>
-						<button type="button" class="wiringButton" onclick="wiring(1)" disabled id="wiringButtonB"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(1)" disabled id="enigmaMachine__wiring__block__letter--buttonB"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>N</p>
-						<button type="button" class="wiringButton" onclick="wiring(13)" disabled id="wiringButtonN"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(13)" disabled id="enigmaMachine__wiring__block__letter--buttonN"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>M</p>
-						<button type="button" class="wiringButton" onclick="wiring(12)" disabled id="wiringButtonM"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(12)" disabled id="enigmaMachine__wiring__block__letter--buttonM"></button>
 					</div>
 
-					<div class="wiring__block__letter">
+					<div class="enigmaMachine__wiring__block__letter">
 						<p>L</p>
-						<button type="button" class="wiringButton" onclick="wiring(11)" disabled id="wiringButtonL"></button>
+						<button type="button" class="enigmaMachine__wiring__block__letter--button" onclick="wiring(11)" disabled id="enigmaMachine__wiring__block__letter--buttonL"></button>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="result">
-			<div id="rawCode">
+		<div class="result">
+			<div class="result__rawCode">
 				<b>Ingresado<b>
 				<br>
-				<p id="rawCodeResult"></p>
+				<p id="result__rawCode--p"></p>
 			</div>
-			<div id="cleanCode">
+			<div class="result__cleanCode">
 				<b>Resultado<b>
 				<br>
-				<p id="cleanCodeResult"></p>
+				<p id="result__cleanCode--p"></p>
 			</div>
-			<div id="clean__button">
-				<button class="setup__button" onclick="clearText()">Limpiar</button>
+			<div class="result__clean">
+				<button class="setup__button--button" onclick="clearText()">Limpiar</button>
 			</div>
 			
 		</div>
